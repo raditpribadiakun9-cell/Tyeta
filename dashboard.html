@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - TyetaPay Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+<body>
+  <header>
+    <h1>TyetaPay Wallet</h1>
+  </header>
+
+  <main class="dashboard">
+    <h2 id="welcome"></h2>
+
+    <div class="balance-card">
+      <p>Saldo Anda</p>
+      <h1 id="balance">Rp 1.000.000</h1>
+    </div>
+
+    <div class="actions">
+      <button onclick="openPopup('topup')">💳 Isi Saldo</button>
+      <button onclick="openPopup('transfer')">💸 Transfer</button>
+      <button onclick="openPopup('qr')">📱 QR Bayar</button>
+      <button onclick="logout()">🚪 Keluar</button>
+    </div>
+
+    <h3>Riwayat Transaksi</h3>
+    <ul class="transactions" id="transactions">
+      <li>+ Rp50.000 — Isi Saldo</li>
+      <li>- Rp20.000 — Transfer ke DANA</li>
+      <li>+ Rp150.000 — Cashback Promo</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Dibuat oleh <strong>Tyeta Dev Team</strong></p>
+  </footer>
+
+  <!-- POPUP -->
+  <div id="popup-container" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="popup-title">Judul Popup</h2>
+      <input type="number" id="popup-amount" placeholder="Masukkan jumlah (Rp)" />
+      <div id="qr-container" class="hidden">
+        <img id="qr-image" src="" alt="QR Code" />
+      </div>
+      <button id="confirm-btn" onclick="confirmAction()">Konfirmasi</button>
+      <button class="cancel" onclick="closePopup()">Batal</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
